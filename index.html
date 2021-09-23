@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华人礼遇酒店</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    div {
+      box-sizing: border-box;
+    }
+
+    .icon {
+      background: url(image/sprite.png) no-repeat;
+      background-size: 65px;
+    }
+
+    .icon-hotel {
+      width: 43px;
+      height: 43px;
+      background-position: 9px -70px;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flex-column {
+      flex-direction: column;
+    }
+
+    .spacing-right {
+      border-right: 1px solid #fff;
+    }
+
+    .spacing-bottom {
+      border-bottom: 1px solid #fff;
+    }
+
+    .spacing-bottom2x {
+      border-bottom: 2px solid #fff;
+    }
+
+    .container {
+      min-width: 540px;
+      max-width: 1200px;
+      width: 80%;
+      border: 1px solid #ccc;
+    }
+
+    .container a {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .container a:hover {
+      text-decoration: none;
+    }
+
+    .container .header img {
+      width: 100%;
+      height: auto;
+    }
+
+    .container .nav-content {
+      padding: 4px;
+    }
+
+    .container .nav-content .con-row {
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .container .con-row .con-item {
+      height: 120px;
+      flex-grow: 1;
+      background-color: #ff697a;
+    }
+
+    .con-row .item-list a {
+      line-height: 60px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="flex flex-center">
+  <div class="container flex flex-column">
+    <div class="header">
+      <img src="image/banner.jpeg" width="1181" height="449" alt="!">
+    </div> 
+    <div class="nav-content flex flex-column">
+      <div class="con-row flex">
+        <div class="con-item flex flex-center spacing-right spacing-bottom2x">
+          <a class="flex flex-column flex-center" href="#">
+            <span>酒店</span>
+            <i class="icon icon-hotel"></i>
+          </a>
+        </div>
+        <div class="con-item item-list flex flex-column spacing-right spacing-bottom2x">
+          <a class="spacing-bottom" href="#">海外酒店</a>
+          <a href="#">特价酒店</a>
+        </div>
+        <div class="con-item item-list flex flex-column spacing-bottom2x">
+          <a class="spacing-bottom" href="#">团购</a>
+          <a href="#">同福客栈</a>
+        </div>
+      </div>
+      <div class="con-row flex">
+        <div class="con-item flex flex-center spacing-right spacing-bottom2x">
+          <a class="flex flex-column flex-center" href="#">
+            <span>酒店</span>
+            <i class="icon icon-hotel"></i>
+          </a>
+        </div>
+        <div class="con-item item-list flex flex-column spacing-right spacing-bottom2x">
+          <a class="spacing-bottom" href="#">海外酒店</a>
+          <a href="#">特价酒店</a>
+        </div>
+        <div class="con-item item-list flex flex-column spacing-bottom2x">
+          <a class="spacing-bottom" href="#">团购</a>
+          <a href="#">同福客栈</a>
+        </div>
+      </div>
+      <div class="con-row flex">
+        <div class="con-item flex flex-center spacing-right spacing-bottom">
+          <a class="flex flex-column flex-center" href="#">
+            <span>酒店</span>
+            <i class="icon icon-hotel"></i>
+          </a>
+        </div>
+        <div class="con-item item-list flex flex-column spacing-right">
+          <a class="spacing-bottom" href="#">海外酒店</a>
+          <a href="#">特价酒店</a>
+        </div>
+        <div class="con-item item-list flex flex-column">
+          <a class="spacing-bottom" href="#">团购</a>
+          <a href="#">同福客栈</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<!-- 
+  （72 65）（43 43）     
+ -->
+
+<!-- 
+  1.  提问:
+          为什么 设置圆角无效
+          .container .nav-content .con-row {
+            border-radius: 4px;
+          }
+      解答: 因为子元素是直角的,它溢出了
+            再给 .con-row 设置 overflow: hidden; 就可以了。
+2.  提问:
+        为什么这里的 行内元素 i标签 可以直接设置宽度和高度？
+        .ico-hotel {
+          width: 43px;
+          height: 43px;
+        }
+    解答: 因为 i标签 的 父级div标签 设置了 flex ,导致 父级div里边的
+          子元素全部变成了块元素。
+3.  提问: 
+        为什么要设置 
+        .container {
+          min-width: 540px;
+          max-width: 1200px;
+        }      
+    解答: 如果不设置 min-width 和 max-width 的话, 当屏幕拉得比较大时,页面容易变形。
+ -->
